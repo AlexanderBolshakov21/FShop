@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FShop"
         mc:Ignorable="d"
-        Title="Registration" Height="950" Width="1350">
+        Title="Registration" Height="950" Width="1350" >
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -17,18 +17,16 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="150"/>
             <RowDefinition/>
-            <RowDefinition Height="150"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-        <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\1\Pictures\впкс-курсач (цветочный)\FShop\FShop\Resources\5609849.jpg"></ImageBrush>
-        </Grid.Background>
+        
 
-        <Image Grid.Column="0" Grid.Row="0" Source="C:\Users\1\Pictures\впкс-курсач (цветочный)\FShop\FShop\Resources\mdi.png" Width="113" HorizontalAlignment="Left" VerticalAlignment="Center" Height="92" Margin="10,0,0,0" />
+        <Image Grid.Column="0" Grid.Row="0" Width="113" HorizontalAlignment="Left" VerticalAlignment="Center" Height="92" Margin="10,0,0,0" />
 
 
 
-        <Label Grid.Column="1" Content="FlowersForLovers" HorizontalAlignment="Center" FontSize="50" FontFamily="Malgun Gothic Semilight" FontWeight="Normal" VerticalAlignment="Center" Height="92" />
+        <Label Grid.Column="1" Content="Ручки.есть" HorizontalAlignment="Center" FontSize="50" FontFamily="Malgun Gothic Semilight" FontWeight="Normal" VerticalAlignment="Center" Height="92" />
 
         <Border Grid.Row="1" MinWidth="150" Background="White" MaxHeight="640" Padding="30" MaxWidth="450" MinHeight="100" CornerRadius="20" Margin="0,0,6,8" Grid.Column="1"  >
             <Border.Effect>
@@ -36,7 +34,7 @@
             </Border.Effect>
 
             <StackPanel>
-                <Label Content="SIGN UP" FontFamily="Malgun Gothic Semilight" FontSize="30" HorizontalAlignment="Center"/>
+                <Label Content="Регистрация" FontFamily="Malgun Gothic Semilight" FontSize="30" HorizontalAlignment="Center"/>
                 <Border BorderThickness="1" BorderBrush="#acb0af" CornerRadius="5" Margin="5 5">
                     <Grid Margin="5 5">
                         <Grid.ColumnDefinitions>
@@ -44,7 +42,7 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock x:Name="Fulln" Text="Fullname" Style="{DynamicResource textHint}" FontFamily="Malgun Gothic Semilight" MouseDown="Fuln_MouseDown"/>
+                        <TextBlock x:Name="Fulln" Text="ФИО" Style="{DynamicResource textHint}" FontFamily="Malgun Gothic Semilight" MouseDown="Fuln_MouseDown"/>
                         <TextBox Style="{DynamicResource textbox}" x:Name="Fullname_txtb" TextChanged="Fullname_TextChanged" FontFamily="Malgun Gothic Semilight"/>
                     </Grid>
                 </Border>
@@ -55,7 +53,7 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock x:Name="Log" Text="Login" Style="{DynamicResource textHint}" FontFamily="Malgun Gothic Semilight" MouseDown="Log_MouseDown"/>
+                        <TextBlock x:Name="Log" Text="Логин" Style="{DynamicResource textHint}" FontFamily="Malgun Gothic Semilight" MouseDown="Log_MouseDown"/>
                         <TextBox Style="{DynamicResource textbox}" x:Name="Log_reg" TextChanged="Log_reg_TextChanged" FontFamily="Malgun Gothic Semilight"/>
                     </Grid>
                 </Border>
@@ -77,7 +75,7 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock x:Name="Ph" Text="Phone" Style="{DynamicResource textHint}" FontFamily="Malgun Gothic Semilight" MouseDown="Ph_MouseDown"/>
+                        <TextBlock x:Name="Ph" Text="Номер телефона" Style="{DynamicResource textHint}" FontFamily="Malgun Gothic Semilight" MouseDown="Ph_MouseDown"/>
                         <TextBox Style="{DynamicResource textbox}" x:Name="Phone_txtb" TextChanged="Phone_TextChanged" FontFamily="Malgun Gothic Semilight"/>
                     </Grid>
                 </Border>
@@ -88,7 +86,7 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock x:Name="Pass" Text="Password" Style="{DynamicResource textHint}" FontFamily="Malgun Gothic Semilight" MouseDown="Pass_MouseDown"/>
+                        <TextBlock x:Name="Pass" Text="Пароль" Style="{DynamicResource textHint}" FontFamily="Malgun Gothic Semilight" MouseDown="Pass_MouseDown"/>
                         <PasswordBox Style="{DynamicResource textbox}" x:Name="Pass_reg"  FontFamily="Malgun Gothic Semilight" PasswordChanged="Pass_reg_PasswordChanged"/>
                     </Grid>
                 </Border>
@@ -99,12 +97,12 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock x:Name="PassSec" Text="Password" Style="{DynamicResource textHint}" FontFamily="Malgun Gothic Semilight" MouseDown="PassSec_MouseDown" Margin="5,0,0,5"/>
+                        <TextBlock x:Name="PassSec" Text="Повторите пароль" Style="{DynamicResource textHint}" FontFamily="Malgun Gothic Semilight" MouseDown="PassSec_MouseDown" Margin="5,0,0,5"/>
                         <PasswordBox Style="{DynamicResource textbox}" x:Name="PassSec_reg" FontFamily="Malgun Gothic Semilight" PasswordChanged="PassSec_reg_PasswordChanged"/>
                     </Grid>
                 </Border>
-                <Button x:Name="button_reg" Style="{DynamicResource mainbutton}" Width="267" Content="Create Account" Height="74" FontSize="28" Margin="0,5,0,15" Click="button_reg_Click"/>
-                <TextBlock HorizontalAlignment="Center" FontSize="25">Existing user? <Hyperlink NavigateUri="Registration.xaml" Foreground="#B8895B" FontFamily="Malgun Gothic Semilight" Click="Hyperlink_Click">Log In Here</Hyperlink></TextBlock>
+                <Button x:Name="button_reg" Style="{DynamicResource mainbutton}" Width="267" Content="Создать аккаунт" Height="74" FontSize="28" Margin="0,5,0,15" Click="button_reg_Click"/>
+                <TextBlock HorizontalAlignment="Center" FontSize="25">Есть аккаунт? <Hyperlink NavigateUri="Registration.xaml" Foreground="#C0D0BA" FontFamily="Malgun Gothic Semilight" Click="Hyperlink_Click">Войти</Hyperlink></TextBlock>
             </StackPanel>
         </Border>
     </Grid>

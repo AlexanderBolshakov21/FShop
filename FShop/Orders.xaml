@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FShop"
         mc:Ignorable="d"
-        Title="Orders" Height="950" Width="1350">
+        Title="Orders" Height="950" Width="1350" >
     <Grid>
         <Grid>
             <Grid>
@@ -14,6 +14,7 @@
 
                     <RowDefinition/>
 
+                    <RowDefinition Height="100"/>
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" Height="100" VerticalAlignment="Top">
                     <Grid>
@@ -28,17 +29,17 @@
 
                         <Image Grid.Column="0"  Source="C:\Users\1\Pictures\впкс-курсач (цветочный)\FShop\FShop\Resources\mdi.png" Width="113" HorizontalAlignment="Left" VerticalAlignment="Center" Height="92"  />
 
-                        <Button FontSize="30" Content="Products" Style="{DynamicResource mainbutton}" Height="100" Grid.Column="2" BorderBrush="White" HorizontalAlignment="Center" Width="180" VerticalAlignment="Center" FontFamily="Malgun Gothic Semilight" Click="Button_Click">
+                        <Button FontSize="30" Content="Каталог" Style="{DynamicResource mainbutton}" Height="100" Grid.Column="2" BorderBrush="White" HorizontalAlignment="Center" Width="180" VerticalAlignment="Center" FontFamily="Malgun Gothic Semilight" Click="Button_Click">
 
                         </Button>
-                        <Label Grid.Column="1" Content="FlowersForLovers" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Malgun Gothic Semilight" FontSize="30"/>
+                        <Label Grid.Column="1" Content="Ручки.есть" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Malgun Gothic" FontSize="36" FontWeight="Bold" Margin="462,0,0,0"/>
 
                     </Grid>
 
                 </StackPanel>
 
 
-                <DataGrid FontFamily="Malgun Gothic Semilight" FontSize="30" Grid.Row="1" x:Name="DGridOrder"  AutoGenerateColumns="False" IsReadOnly="True" Margin="0,35,0,89" SelectionChanged="DGridOrder_SelectionChanged">
+                <DataGrid FontFamily="Malgun Gothic Semilight" FontSize="30" Grid.Row="1" x:Name="DGridOrder"  AutoGenerateColumns="False" IsReadOnly="True" Margin="0,35,0,10" SelectionChanged="DGridOrder_SelectionChanged">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="IdUser" Binding="{Binding IdUser}" Width="*"></DataGridTextColumn>
                         <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"></DataGridTextColumn>
@@ -46,18 +47,20 @@
                         <DataGridTextColumn Header="Address" Binding="{Binding Address}" Width="*"></DataGridTextColumn>
                         <DataGridTextColumn Header="Comment" Binding="{Binding Comment}" Width="*"></DataGridTextColumn>
                         <DataGridTextColumn Header="Phone" Binding="{Binding Phone}" Width="*"></DataGridTextColumn>
-                        
+
                         <DataGridTemplateColumn Width="auto">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                   
+
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                     </DataGrid.Columns>
 
                 </DataGrid>
+                <Button Width="150" Content="Удалить" Style="{DynamicResource mainbutton}" Grid.Row="2" HorizontalAlignment="Right" Margin="0,0,10,0" FontSize="30" Click="Button_Click_1"/>
             </Grid>
+
         </Grid>
     </Grid>
 </Window>

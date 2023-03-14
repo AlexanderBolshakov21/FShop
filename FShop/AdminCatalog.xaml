@@ -5,25 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FShop"
         mc:Ignorable="d"
-        Title="AdminCatalog" Height="950" Width="1350">
+        Title="AdminCatalog" Height="950" Width="1350" >
     <Grid>
         <Grid>
             <StackPanel Height="100" VerticalAlignment="Top">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="113"/>
-
+                        <ColumnDefinition Width="200"/>
                         <ColumnDefinition/>
                         <ColumnDefinition Width="200"/>
 
                     </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0"  Content="Выход"  Style="{DynamicResource mainbutton}" Width="184" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="92" FontSize="30" Margin="10,0,0,4" Click="Button_Exit"  />
 
-                    <Image Grid.Column="0"  Source="C:\Users\1\Pictures\впкс-курсач (цветочный)\FShop\FShop\Resources\mdi.png" Width="113" HorizontalAlignment="Left" VerticalAlignment="Center" Height="92"  />
 
-                    <Button FontSize="30" Content="Orders" Style="{DynamicResource mainbutton}" Height="100" Grid.Column="2" BorderBrush="White" HorizontalAlignment="Center" Width="180" VerticalAlignment="Center" FontFamily="Malgun Gothic Semilight" Click="Button_Click_3">
+                    <Button FontSize="30" Content="Заказы" Style="{DynamicResource mainbutton}" Height="100" Grid.Column="2" BorderBrush="White" HorizontalAlignment="Center" Width="180" VerticalAlignment="Center" FontFamily="Malgun Gothic Semilight" Click="Button_Click_3">
 
                     </Button>
-                    <Label Grid.Column="1" Content="FlowersForLovers" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Malgun Gothic Semilight" FontSize="30"/>
+                    <Label Grid.Column="1" Content="Ручки.есть" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Malgun Gothic" FontSize="36" Height="80" Width="289" HorizontalContentAlignment="Center" FontWeight="Bold"/>
 
                 </Grid>
 
@@ -47,9 +46,6 @@
                                 <Image Grid.Column="0">
                                     <Image.Source>
                                         <Binding Path="Image">
-                                            <Binding.TargetNullValue>
-                                                <ImageSource>C:\Users\1\Pictures\впкс-курсач (цветочный)\FShop\FShop\Resources\noimage.jpg</ImageSource>
-                                            </Binding.TargetNullValue>
                                         </Binding>
                                     </Image.Source>
                                 </Image>
@@ -64,8 +60,10 @@
                                     <TextBlock FontFamily="Malgun Gothic" FontSize="30" Grid.Row="0" Text="{Binding Name}" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
                                 </Grid>
                                 <StackPanel Orientation="Horizontal" Grid.Row="1">
-                                    <Label FontFamily="Malgun Gothic Semilight" FontSize="25" Content="Price:"></Label>
+                                    <Label FontFamily="Malgun Gothic Semilight" FontSize="25" Content="Цена:"></Label>
                                     <Label FontFamily="Malgun Gothic Semilight" Content="{Binding Price}" FontSize="25" ></Label>
+                                    <Label FontFamily="Malgun Gothic Semilight" FontSize="25" Content="Количество:"></Label>
+                                    <Label FontFamily="Malgun Gothic Semilight" Content="{Binding Quantity}" FontSize="25" ></Label>
 
                                 </StackPanel>
                                 <Grid Grid.Row="2">
@@ -73,7 +71,7 @@
                                 </Grid>
 
                             </Grid>
-                            <Button Style="{DynamicResource mainbutton}" Grid.Column="2" Content="Edit" FontFamily="Malgun Gothic Semilight" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click"/>
+                            <Button Style="{DynamicResource mainbutton}" Grid.Column="2" Content="Редактировать" FontFamily="Malgun Gothic Semilight" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click"/>
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -82,15 +80,14 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="250"/>
-
                         <ColumnDefinition/>
                         <ColumnDefinition Width="200"/>
 
                     </Grid.ColumnDefinitions>
 
-                    <Button Grid.Column="0"  Content="Delete"  Style="{DynamicResource mainbutton}" Width="184" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="92" FontSize="30" Margin="10,0,0,4" Click="Button_Click_1"  />
+                    <Button Grid.Column="0"  Content="Удалить"  Style="{DynamicResource mainbutton}" Width="184" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="92" FontSize="30" Margin="10,0,0,4" Click="Button_Click_1"  />
 
-                    <Button Content="Add" Style="{DynamicResource mainbutton}" Grid.Column="2" BorderBrush="White" HorizontalAlignment="Center" Width="180" FontSize="30" Click="Button_Click_2"/>
+                    <Button Content="Добавить" Style="{DynamicResource mainbutton}" Grid.Column="2" BorderBrush="White" HorizontalAlignment="Center" Width="180" FontSize="30" Click="Button_Click_2"/>
 
                 </Grid>
 

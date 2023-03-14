@@ -10,7 +10,6 @@
   <ItemGroup>
     <None Remove="ion_exit-outline.png" />
     <None Remove="ph_user-circle-light.png" />
-    <None Remove="Resources\ion_exit-outline.png" />
     <None Remove="simple-line-icons_bag.png" />
   </ItemGroup>
 
@@ -23,9 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\ion_exit-outline.png" />
-    <Resource Include="Resources\ph_user-circle-light.png" />
-    <Resource Include="Resources\simple-line-icons_bag.png" />
+    <Folder Include="Resources\" />
   </ItemGroup>
 
 </Project>

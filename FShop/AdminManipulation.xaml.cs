@@ -68,7 +68,7 @@ namespace FShop
         {
             if ( NameTB.Text == "" || QuTB.Text == "" || PriceTB.Text == "")
             {
-                MessageBox.Show("Not all fields are filled in!");
+                MessageBox.Show("Не все поля заполнены!");
                 return;
             }
 
@@ -86,11 +86,11 @@ namespace FShop
             if (imagepath != "")
                 _currentProduct.Image = File.ReadAllBytes(imagepath);
             if (_currentProduct.Id == 0)
-                DbflowerShopContext.GetContext().Products.Add(_currentProduct);
+                DbShopContext.GetContext().Products.Add(_currentProduct);
             try
             {
-                DbflowerShopContext.GetContext().SaveChanges();
-                MessageBox.Show("Information is saved!");
+                DbShopContext.GetContext().SaveChanges();
+                MessageBox.Show("Информация сохранена!");
                 this.Close();
 
             }
@@ -100,37 +100,7 @@ namespace FShop
             }
 
 
-            //string Name = NameTB.Text.Trim();
-            //int Quantity = Convert.ToInt32(QuTB.Text.Trim());
-            //int Cost = Convert.ToInt32(PriceTB.Text.Trim());
-            //string Description = DescTb.Text.Trim();
-
-            //using (DbflowerShopContext db = new DbflowerShopContext())
-            //{
-            //    var product = db.Products.FirstOrDefault(x => x.Name == NameTB.Text || x.Quantity == Convert.ToInt32(QuTB.Text) || x.Price == Convert.ToInt32(PriceTB.Text));
-            //    if (product != null)
-            //    {
-            //        MessageBox.Show("Такой товар уже существует!");
-            //    }
-            //    if (imagepath != "")
-            //        _currentProduct.Image = File.ReadAllBytes(imagepath);
-            //    Product productadd = new Product
-            //    {
-
-            //        Name = NameTB.Text,
-            //        Quantity = Convert.ToInt32(QuTB.Text),
-            //        Price = Convert.ToInt32(PriceTB.Text),
-            //        Description = DescTb.Text,
-
-            //    };
-
-
-            //    db.Products.Add(productadd);
-            //    db.SaveChanges();
-            //    MessageBox.Show("Товар успешно добавлен!");
-            //    AdminCatalog catalogAdminWindow = new AdminCatalog();
-            //    catalogAdminWindow.Show();
-            //    Hide();
+            
         
         }
     }

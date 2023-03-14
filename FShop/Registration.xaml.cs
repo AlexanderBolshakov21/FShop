@@ -217,7 +217,7 @@ namespace FShop
                                 Email_txtb.Background = Brushes.Transparent;
 
 
-                                using (DbflowerShopContext db = new DbflowerShopContext())
+                                using (DbShopContext db = new DbShopContext())
                             {
                                 var user = db.Users.FirstOrDefault(x => x.Login == Log_reg.Text || x.Password == Pass_reg.Password);
                                 if (user != null)

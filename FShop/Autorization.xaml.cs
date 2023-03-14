@@ -97,7 +97,7 @@ namespace FShop
                     Pass_ent.ToolTip = "";
                     Pass_ent.Background = Brushes.Transparent;
 
-                    using (DbflowerShopContext context = new DbflowerShopContext())
+                    using (DbShopContext context = new DbShopContext())
                     {
                         foreach (User authUser in context.Users)
                         {

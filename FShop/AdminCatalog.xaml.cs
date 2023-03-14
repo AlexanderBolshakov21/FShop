@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+
 
 namespace FShop
 {
@@ -22,7 +14,7 @@ namespace FShop
         public AdminCatalog()
         {
             InitializeComponent();
-            AdminCatalogList.ItemsSource = DbflowerShopContext.GetContext().Products.ToList();
+            AdminCatalogList.ItemsSource = DbShopContext.GetContext().Products.ToList();
         }
 
        
@@ -36,7 +28,7 @@ namespace FShop
         {
             AdminManipulation adminManipulation = new AdminManipulation((sender as Button).DataContext as Product);
             adminManipulation.ShowDialog();
-            AdminCatalogList.ItemsSource = DbflowerShopContext.GetContext().Products.ToList();
+            AdminCatalogList.ItemsSource = DbShopContext.GetContext().Products.ToList();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -46,10 +38,10 @@ namespace FShop
              MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 try
                 {
-                    DbflowerShopContext.GetContext().Products.RemoveRange(productsForRemoving);
-                    DbflowerShopContext.GetContext().SaveChanges();
+                    DbShopContext.GetContext().Products.RemoveRange(productsForRemoving);
+                    DbShopContext.GetContext().SaveChanges();
                     MessageBox.Show("Данные удалены!");
-                    AdminCatalogList.ItemsSource = DbflowerShopContext.GetContext().Products.ToList();
+                    AdminCatalogList.ItemsSource = DbShopContext.GetContext().Products.ToList();
 
                 }
                 catch (Exception ex)
@@ -62,7 +54,7 @@ namespace FShop
         {
             AdminManipulation adminManipulation = new AdminManipulation(AdminCatalogList.SelectedItem as Product);
             adminManipulation.ShowDialog();
-            AdminCatalogList.ItemsSource = DbflowerShopContext.GetContext().Products.ToList();
+            AdminCatalogList.ItemsSource = DbShopContext.GetContext().Products.ToList();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
@@ -70,6 +62,13 @@ namespace FShop
             Orders orders = new Orders();
             this.Close();
             orders.Show();
+        }
+
+        private void Button_Exit(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            this.Close();
+            mainWindow.Show();
         }
     }
 }

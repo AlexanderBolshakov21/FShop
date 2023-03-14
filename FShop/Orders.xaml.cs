@@ -22,9 +22,9 @@ namespace FShop
         public Orders()
         {
             InitializeComponent();
-            DbflowerShopContext db = new DbflowerShopContext();
+            DbShopContext db = new DbShopContext();
             List<Order> order = db.Orders.ToList();
-            DGridOrder.ItemsSource = DbflowerShopContext.GetContext().Orders.ToList();
+            DGridOrder.ItemsSource = DbShopContext.GetContext().Orders.ToList();
         }
 
         private void DGridOrder_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -37,6 +37,25 @@ namespace FShop
             AdminCatalog ac = new AdminCatalog();
             this.Close();
             ac.Show();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var productsForRemoving = DGridOrder.SelectedItems.Cast<Order>().ToList();
+            if (MessageBox.Show($"Вы точно хотите удалить следующие {productsForRemoving.Count()} элемента(ов)?", "Внимание",
+             MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                try
+                {
+                    DbShopContext.GetContext().Orders.RemoveRange(productsForRemoving);
+                    DbShopContext.GetContext().SaveChanges();
+                    MessageBox.Show("Данные удалены!");
+                    DGridOrder.ItemsSource = DbShopContext.GetContext().Orders.ToList();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
         }
     }
 }

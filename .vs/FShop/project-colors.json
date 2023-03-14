@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "dcee9b8f-fae1-4a9c-ae83-01c74338cf60": {
+      "ProjectGuid": "dcee9b8f-fae1-4a9c-ae83-01c74338cf60",
+      "DisplayName": "FShop",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Прочие файлы",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}

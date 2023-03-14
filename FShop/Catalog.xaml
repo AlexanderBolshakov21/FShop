@@ -5,31 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FShop"
         mc:Ignorable="d"
-        Title="Catalog" Height="950" Width="1350">
+        Title="Catalog" Height="950" Width="1350" >
     <Grid>
         <Grid>
-            <StackPanel Height="100" VerticalAlignment="Top">
+            <StackPanel Height="100" VerticalAlignment="Top" Background="#C0D0BA">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="113"/>
+
 
                         <ColumnDefinition/>
-                        <ColumnDefinition Width="100"/>
-                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="200"/>
                     </Grid.ColumnDefinitions>
 
-                    <Image Grid.Column="0"  Source="C:\Users\1\Pictures\впкс-курсач (цветочный)\FShop\FShop\Resources\mdi.png" Width="113" HorizontalAlignment="Left" VerticalAlignment="Center" Height="92"  />
 
-                    <Button Height="100" Grid.Column="2" BorderBrush="White" HorizontalAlignment="Center" Width="100" VerticalAlignment="Bottom">
-                        <Button.Background>
-                            <ImageBrush Stretch="Fill" ImageSource="C:\Users\1\Pictures\впкс-курсач (цветочный)\FShop\FShop\Resources\simple-line-icons_bag.png"/>
-                        </Button.Background>
+                    <Button Content="Корзина" Style="{DynamicResource mainbutton}" Height="100" Grid.Column="2" BorderBrush="White" HorizontalAlignment="Center" Width="180" VerticalAlignment="Center" Click="Button_Click_1" FontSize="30" Margin="0,0,10,0">
+
                     </Button>
-                    <Label Grid.Column="1" Content="FlowersForLovers" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Malgun Gothic Semilight" FontSize="30"/>
-                    <Button Grid.Column="3" BorderBrush="White" Height="100" VerticalAlignment="Top" Click="Button_Click">
-                        <Button.Background>
-                            <ImageBrush ImageSource="C:\Users\1\Pictures\впкс-курсач (цветочный)\FShop\FShop\Resources\ph_user-circle-light.png"/>
-                        </Button.Background>
+                    <Label Grid.Column="0" Content="Ручки.есть" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Malgun Gothic" FontSize="36" Margin="606,0,0,0" FontWeight="Bold"/>
+                    <Button  Content="Кабинет" Style="{DynamicResource mainbutton}" Grid.Column="1" BorderBrush="White" Height="100" VerticalAlignment="Top" Click="Button_Click" FontSize="30">
+
                     </Button>
                 </Grid>
 
@@ -53,9 +48,7 @@
                                 <Image Grid.Column="0">
                                     <Image.Source>
                                         <Binding Path="Image">
-                                            <Binding.TargetNullValue>
-                                                <ImageSource>C:\Users\1\Pictures\впкс-курсач (цветочный)\FShop\FShop\Resources\noimage.jpg</ImageSource>
-                                            </Binding.TargetNullValue>
+
                                         </Binding>
                                     </Image.Source>
                                 </Image>
@@ -70,7 +63,7 @@
                                     <TextBlock FontFamily="Malgun Gothic" FontSize="30" Grid.Row="0" Text="{Binding Name}" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
                                 </Grid>
                                 <StackPanel Orientation="Horizontal" Grid.Row="1">
-                                    <Label FontFamily="Malgun Gothic Semilight" FontSize="25" Content="Price:"></Label>
+                                    <Label FontFamily="Malgun Gothic Semilight" FontSize="25" Content="Цена:"></Label>
                                     <Label FontFamily="Malgun Gothic Semilight" Content="{Binding Price}" FontSize="25" ></Label>
 
                                 </StackPanel>
@@ -79,7 +72,7 @@
                                 </Grid>
 
                             </Grid>
-                            <Button Style="{DynamicResource mainbutton}" Grid.Column="2" Content="+" FontFamily="Malgun Gothic Semilight" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <Button Style="{DynamicResource mainbutton}" Grid.Column="3" Content="Добавить" FontFamily="Malgun Gothic Semilight" FontSize="25" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>

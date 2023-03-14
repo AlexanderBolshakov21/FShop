@@ -22,7 +22,7 @@ namespace FShop
         public Catalog()
         {
             InitializeComponent();
-            CatalogList.ItemsSource = DbflowerShopContext.GetContext().Products.ToList();
+            CatalogList.ItemsSource = DbShopContext.GetContext().Products.ToList();
         }
 
         private void Catalog_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -35,6 +35,13 @@ namespace FShop
             PersAcc users = new PersAcc();
             this.Close();
             users.Show();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Bag bag = new Bag();
+            this.Close();
+            bag.Show();
         }
     }
 }

@@ -22,7 +22,7 @@ namespace FShop
         public PersAcc()
         {
             InitializeComponent();
-            using (DbflowerShopContext context = new DbflowerShopContext())
+            using (DbShopContext context = new DbShopContext())
             {
                 foreach (User authUser in context.Users)
                 {
@@ -46,7 +46,7 @@ namespace FShop
             fulltb.Visibility = Visibility.Visible;
             phtb.Visibility = Visibility.Visible;
             SaveButton.Visibility = Visibility.Visible;
-            using (DbflowerShopContext context = new DbflowerShopContext())
+            using (DbShopContext context = new DbShopContext())
             {
                 foreach (User authUser in context.Users)
                 {
@@ -63,12 +63,12 @@ namespace FShop
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            using (DbflowerShopContext db = new DbflowerShopContext())
+            using (DbShopContext db = new DbShopContext())
             {
                 var user = db.Users.FirstOrDefault(x => x.Login == logtb.Text);
                 if (user != null)
                 {
-                    MessageBox.Show("This login is already used!");
+                    MessageBox.Show("Такой логин уже существует!");
                 }
                 foreach (User authUser in db.Users)
                 {
@@ -77,9 +77,8 @@ namespace FShop
                         authUser.Login = logtb.Text;
                         authUser.Fullname = fulltb.Text;
                         authUser.Phone = phtb.Text;
-                        //db.Users.Update(authUser); 
                         db.SaveChanges();
-                        MessageBox.Show("Infromation is saved!");
+                        MessageBox.Show("Информация сохранена!");
                         this.Close();
                         PersAcc users = new PersAcc();
                         users.Show();
